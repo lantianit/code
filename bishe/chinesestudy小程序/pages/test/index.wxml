@@ -1,0 +1,5 @@
+<view class="container">
+    <button bindtap="chooseImage">选择图片</button>
+    <image wx:if="{{imagePath}}" src="{{imagePath}}" mode="aspectFit" style="width: 200px; height: 200px;"></image>
+    <button bindtap="uploadImage" disabled="{{!imagePath}}">上传图片</button>
+</view>

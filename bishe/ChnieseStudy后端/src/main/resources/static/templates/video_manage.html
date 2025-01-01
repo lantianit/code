@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>视频数据管理平台</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/main.js"></script>
+</head>
+
+<body>
+<h1>视频数据管理平台</h1>
+
+<!-- 搜索框 -->
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="请输入视频标题进行搜索">
+    <button id="search-button">搜索</button>
+</div>
+
+<!-- 视频列表表格 -->
+<table id="video-table">
+    <thead>
+    <tr>
+        <th>视频ID</th>
+        <th>视频标题</th>
+        <th>视频链接</th>
+        <th>视频时长</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!-- 新增视频表单 -->
+<form id="add-video-form">
+    <label for="add-title">视频标题：</label>
+    <input type="text" id="add-title" required><br>
+    <label for="add-url">视频链接：</label>
+    <input type="text" id="add-url" required><br>
+    <label for="add-duration">视频时长：</label>
+    <input type="text" id="add-duration" required><br>
+    <input type="submit" value="新增视频">
+</form>
+
+<!-- 修改视频表单 -->
+<form id="update-video-form" style="display: none;">
+    <input type="hidden" id="update-video-id">
+    <label for="update-title">视频标题：</label>
+    <input type="text" id="update-title" required><br>
+    <label for="update-url">视频链接：</label>
+    <input type="text" id="update-url" required><br>
+    <label for="update-duration">视频时长：</label>
+    <input type="text" id="update-duration" required><br>
+    <input type="submit" value="修改视频">
+</form>
+</body>
+
+</html>

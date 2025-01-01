@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 头像和昵称区域 -->
+  <view class="info-box">
+    <view wx:if="{{user!=null}}" style="text-align: center;margin-bottom:10%;">
+      <image class="avatar-img" src="{{baseUrl + '/image/userphoto/' + user.userPic}}" />
+    </view>
+    <text wx:if="{{user!=null}}">昵称： {{user.nickName}}</text>
+  </view>
+
+  <!-- 学习积分区域 -->
+  <view wx:if="{{user!=null}}" class="score-box">
+    <text>当前学习积分：{{user.score}}</text>
+  </view>
+
+  <!-- 视频观看历史记录区域 -->
+  <view class="history-box">
+    <text>视频观看历史记录：</text>
+    <view class="history-list">
+      <!-- <block wx:for="{{videoHistory}}" wx:key="index"> -->
+      <!-- <text>{{item.videoTitle}} - 观看时间：{{item.watchTime}}</text> -->
+      <!-- </block> -->
+    </view>
+  </view>
+
+  <!-- 添加退出账号按钮 -->
+  <button bindtap="handleLogout" class="logout-btn">退出当前账号</button>
+</view>
