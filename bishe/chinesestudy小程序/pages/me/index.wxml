@@ -12,15 +12,20 @@
     <text>当前学习积分：{{user.score}}</text>
   </view>
 
-  <!-- 视频观看历史记录区域 -->
-  <view class="history-box">
-    <text>视频观看历史记录：</text>
-    <view class="history-list">
-      <!-- <block wx:for="{{videoHistory}}" wx:key="index"> -->
-      <!-- <text>{{item.videoTitle}} - 观看时间：{{item.watchTime}}</text> -->
-      <!-- </block> -->
-    </view>
-  </view>
+<!-- 视频观看历史记录区域 -->
+<view class="history-box">
+  <button bindtap="navigateToHistory" class="history-btn">查看历史观看记录</button>
+</view>
+
+<!-- 视频点赞记录区域 -->
+<view class="like-history-box">
+  <button bindtap="navigateToLikeHistory" class="history-btn">查看点赞记录</button>
+</view>
+
+<!-- 视频收藏记录区域 -->
+<view class="favorite-history-box">
+  <button bindtap="navigateToFavoriteHistory" class="history-btn">查看收藏记录</button>
+</view>
 
   <!-- 添加退出账号按钮 -->
   <button bindtap="handleLogout" class="logout-btn">退出当前账号</button>

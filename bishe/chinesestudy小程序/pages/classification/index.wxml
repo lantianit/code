@@ -23,6 +23,7 @@
           wx:for="{{rightContent}}"
           wx:for-item="video"
           wx:key="videoId"
+          url="/pages/videoPage/index?videoId={{video.videoId}}"
         >
           <text>{{video.title}}</text><image class="course_icon" src="/icons/course.png" mode="heightFix"></image>
         </navigator>

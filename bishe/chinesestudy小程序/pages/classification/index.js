@@ -44,6 +44,17 @@ Page({
     console.log(this.data.rightContent)
   },
 
+  // 点击视频标题跳转到视频页面
+  handleVideoJump(e){
+    const {indexVideo} = e.currentTarget.dataset;
+    console.log("indexVideo" + indexVideo)
+    const app = getApp();
+    app.globalData.indexVideo = indexVideo;
+    wx.navigateTo({
+      url: '/pages/videoPage/index'
+    })
+  },
+
   // 获取商品大类数据 从首页跳转过来的
   async getCates2(index){
     console.log("getCates")

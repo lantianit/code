@@ -2,6 +2,9 @@ package org.example.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.example.entity.Video;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
 * @author 12109
@@ -11,6 +14,11 @@ import org.example.entity.Video;
 */
 public interface VideoMapper extends BaseMapper<Video> {
 
+    @Select("SELECT * FROM video WHERE video_id = #{videoId}")
+    Video getVideoById(Long videoId);
+
+    @Select("SELECT * FROM video WHERE title LIKE CONCAT('%', #{title}, '%')")
+    List<Video> findVideosByTitle(String title);
 }
 
 

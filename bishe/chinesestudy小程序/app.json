@@ -7,7 +7,10 @@
     "pages/me/index",
     "pages/search/index",
     "pages/login/login",
-    "pages/test/index"
+    "pages/test/index",
+    "pages/historyPage/index",
+    "pages/likeHistoryPage/index",
+    "pages/favoriteHistoryPage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

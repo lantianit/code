@@ -15,4 +15,6 @@ public interface UserService  extends IService<User> {
     User getUserByLoginName(User user);
 
     List<User> getUserScoreRankList();
+
+    void addPoints(int userId, int points);
 }

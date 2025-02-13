@@ -32,22 +32,16 @@ public class BigTypeController {
     @GetMapping("/getAll")
     public R getAll() {
         List<Bigtype> bigtypesList = bigtypeService.list();
-        Map<String,Object> map=new HashMap<>();
-        map.put("message",bigtypesList);
-        return R.ok(map);
+        return R.ok(Map.of("message", bigtypesList));
     }
 
     @GetMapping("/getBigTypeVideo")
     public R getBigTypeVideo() {
         List<Bigtype> bigtypesList = bigtypeService.list();
-        for (Bigtype bigtype : bigtypesList) {
+        bigtypesList.forEach(bigtype -> {
             List<Video> videos = videoService.list(new QueryWrapper<Video>().eq("type", bigtype.getName()));
             bigtype.setBigTypeVideoList(videos);
-        }
-        Map<String,Object> map=new HashMap<>();
-        map.put("message",bigtypesList);
-        return R.ok(map);
+        });
+        return R.ok(Map.of("message", bigtypesList));
     }
-
-
 }

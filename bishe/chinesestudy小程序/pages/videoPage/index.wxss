@@ -129,3 +129,18 @@
 .comment-text {
   word-break: break-all;
 }
+
+.interaction-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx 0;
+}
+
+.like-button, .favorite-button {
+  padding: 10rpx 20rpx;
+  background-color: #9C6B30;
+  color: white;
+  border: none;
+  border-radius: 5rpx;
+  font-size: 16px;
+}

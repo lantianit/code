@@ -6,6 +6,7 @@ import org.example.entity.User;
 import org.example.service.UserService;
 import org.example.mapper.UserMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -40,5 +41,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public User getUserByLoginName(User user) {
         return userMapper.selectOne(new QueryWrapper<User>().eq("login_name", user.getLoginName()));
+    }
+
+    @Override
+    @Transactional
+    public void addPoints(int userId, int points) {
+        User user = userMapper.selectById(userId);
+        if (user != null) {
+            user.setScore(user.getScore() + points);
+            userMapper.updateById(user);
+        }
     }
 }

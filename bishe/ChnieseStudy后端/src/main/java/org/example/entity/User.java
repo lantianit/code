@@ -50,4 +50,8 @@ public class User implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
